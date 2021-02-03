@@ -3,7 +3,8 @@
   HACKed together from two examples from the online 
   help - DosFindFirst/DosFindNext & rename	
 
-  [09/19/97] Tels: Initial Version
+  [1997-09-19] Tels: Initial Version
+  [2020-02-02] Version 1.1 compiled by Martin Iturbide
 
 */
 
@@ -55,7 +56,7 @@ int main (VOID) {
      ULONG         ulFindCount    = 1;        /* Look for 1 file at a time    */
      APIRET        rc             = NO_ERROR; /* Return code                  */
 
-    printf ("ToLower  v1.0 (c) by tels@pobox.com 1997.  All Rights Reserved.  \n\n");
+    printf ("ToLower  v1.1 \n\n");
 
      rc = DosFindFirst( "*.*",                /* File pattern - all files     */
                         &hdirFindHandle,      /* Directory search handle      */
@@ -101,8 +102,3 @@ int main (VOID) {
      return NO_ERROR;
      printf ("\nAll done. Have a nice day.\n");
   }
-
-
-
-
-
