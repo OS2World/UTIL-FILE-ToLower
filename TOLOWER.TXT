@@ -1,19 +1,33 @@
 ToLower version 1.1
 -------------------
+This is a small program that was hacked together to convert all files in the current directory to lower case. This is usefull when uploading something to a unix (web) server.
 
-This is a small program that was hacked together to convert all files in the current directory to lower case. This is usefull when uploading something to a unix (web) server. 
 
-I had downloaded once a program that did this, but it destroyed some files badly and damaged most off the filenames. :( 
-So I thought about writing some small tool for myself :)
+Usage:
+-----------------
+Run "tolower.exe" and it will turn all the files on that directory to lower case.  
 
-You may use this for whatever reason you may need it, as long as it is legal and not connected to SPAMMING/KILLING or other mindless stuff. If you break it, you own both halves. No warranties, no  garanties, use it at your own risk. Delivered as is. And dont think you can copy it and spread it as your own work...
+
+Compile tools:
+-----------------
+* IBM C and C++ Compilers, Version 3.6.5 - FP 2. (ICC.EXE)
+* NMake tool version 4.00.001.
 
 
 History revision:
 -----------------
+- v1.0 First version. (1997-09-21)
+- v1.1 Recompiled on 2021. (2021-02-02)
 
-v1.0 First version. (1997-09-21)
-v1.1 Recompiled on 2021.
+
+Story:
+-----------------
+Tels had downloaded once a program that did this, but it destroyed some files badly and damaged most off the filenames. So he thought about writing some small tool for himself.
+
+
+Disclaimer:
+-----------------
+You may use this for whatever reason you may need it, as long as it is legal and not connected to SPAMMING/KILLING or other mindless stuff. If you break it, you own both halves. No warranties, no  garanties, use it at your own risk. Delivered as is. And dont think you can copy it and spread it as your own work...
 
 
 Authors:
