@@ -1,36 +1,38 @@
-ToLower version 1.1
--------------------
-This is a small program that was hacked together to convert all files in the current directory to lower case. This is usefull when uploading something to a unix (web) server.
+ToLower
+-------
 
+This is a small program I hacked together to convert all files
+in the current directory to lower case. This is usefull when
+uploading something to a unix (web) server. 
 
-Usage:
------------------
-Run "tolower.exe" and it will turn all the files on that directory to lower case.  
+I had downloaded once a program that did this, but it destroyed 
+some files badly and damaged most off the filenames. :( 
+So I thought about writing some small tool for myself :)
 
+You may use this for whatever reason you may need it, as long as 
+it is legal and not connected to SPAMMING/KILLING or other mindless 
+stuff. If you break it, you own both halves. No warranties, no 
+garanties, use it at your own risk. Delivered as is. And dont think
+you can copy it and spread it as your own work...
 
-Compile tools:
------------------
-* IBM C and C++ Compilers, Version 3.6.5 - FP 2. (ICC.EXE)
-* NMake tool version 4.00.001.
+#include "disclaimer.h"
 
 
 History revision:
 -----------------
-- v1.0 First version. (1997-09-21)
-- v1.1 Recompiled on 2021. (2021-02-02)
+
+v1.0 First version
+
+[09/21/1997] tels@pobox.com
 
 
-Story:
------------------
-Tels had downloaded once a program that did this, but it destroyed some files badly and damaged most off the filenames. So he thought about writing some small tool for himself.
+v1.0-r3
 
-
-Disclaimer:
------------------
-You may use this for whatever reason you may need it, as long as it is legal and not connected to SPAMMING/KILLING or other mindless stuff. If you break it, you own both halves. No warranties, no  garanties, use it at your own risk. Delivered as is. And dont think you can copy it and spread it as your own work...
-
-
-Authors:
------------------
-- Tels. Original Author.
-- Martin Iturbide. 
+[02/10/2021] Restored OS/2-compatibility. But still broken, because the same
+             modified file(name) can be processed twice. Modified universal,
+             renamed MAKEFILE with lxLite for NMAKE, OS/2 icon added, a new
+             clear warning if directory is empty, formatted output, improved
+             error messages, exception handling, no embedded debug code, the
+             last file shouldn't be displayed more than once, int's replaced
+             by portable size_t's, unused lines and/or C++ comments removed,
+             processing modified, and recompiled with IBM VAC++ v3.08.
