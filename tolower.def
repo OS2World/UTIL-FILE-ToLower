@@ -1,0 +1,6 @@
+;-------------------------------------
+; TOLOWER.DEF module definition file
+;-------------------------------------
+
+NAME    	ToLower		
+DESCRIPTION	'@#OS2World:1.1#@##1## 29 Jun 2023 20:00:00     ARCAOS-507::::::v1.1@@ToLower'

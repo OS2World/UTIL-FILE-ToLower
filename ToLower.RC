@@ -1,1 +1,4 @@
-ICON 1 ToLower.ICO
+/*----------------------------------
+   TOLOWER.RC resource script file
+  ----------------------------------*/
+ICON 1 tolower.ico

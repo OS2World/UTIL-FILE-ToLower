@@ -1,30 +1,20 @@
-# Execute NMAKE.EXE to make ToLower.C
-#
-# [02/10/2021] Restored OS/2-compatibility, update to VAC 3.08, modifications
+# make makefile
+# 
+# Tools used:
+#  Compile::Resource Compiler
+#  Compile::GNU C
+#  Make: make
+all : ToLower.exe
 
-.SUFFIXES: .C .obj
+ToLower.exe : tolower.obj tolower.def tolower.res  
+	gcc -Zomf tolower.obj tolower.def -o ToLower.exe
+	wrc tolower.res
 
-.all: \
-    ToLower.EXE
+tolower.obj : tolower.c 
+	gcc -Wall -Zomf -c -O2 tolower.c -o tolower.obj
 
-.C.obj:
-    @echo " Compile::C++ Compiler "
-    icc.exe /O /Gd /FoToLower.OBJ /C %s
+tolower.res : tolower.rc 
+	wrc -r tolower.rc
 
-tolower.exe: \
-    ToLower.OBJ \
-    {$(LIB)}os2386.lib
-    @echo " Link::Linker "
-    icc.exe @<<
-     /FeToLower.EXE
-     os2386.lib
-     ToLower.OBJ
-<<
-    rc -r ToLower.RC ToLower.RES
-    rc -p -x ToLower.RES ToLower.EXE
-    lxlite.exe ToLower.EXE
-    @del *.OBJ
-    @del *.RES
-
-ToLower.obj: \
-    ToLower.C
+clean :
+	rm -rf *exe *res *obj *lib

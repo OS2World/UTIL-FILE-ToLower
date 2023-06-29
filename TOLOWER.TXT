@@ -1,38 +1,80 @@
-ToLower
--------
+Name: 		ToLower
+Descripcion: 	Lower case command
+Date: 		2023-06-29
+Version:	1.1
+----------------------------   
 
-This is a small program I hacked together to convert all files
-in the current directory to lower case. This is usefull when
-uploading something to a unix (web) server. 
+DESCRIPTION
+-----------
+This is a small program to convert all files in the current directory to lower case. This is usefull when
+uploading something to a unix (web) server.
 
-I had downloaded once a program that did this, but it destroyed 
-some files badly and damaged most off the filenames. :( 
-So I thought about writing some small tool for myself :)
+REQUIREMENTS
+------------
+- yum libc gcc
 
-You may use this for whatever reason you may need it, as long as 
-it is legal and not connected to SPAMMING/KILLING or other mindless 
-stuff. If you break it, you own both halves. No warranties, no 
-garanties, use it at your own risk. Delivered as is. And dont think
-you can copy it and spread it as your own work...
+COMPILE REQUIREMENTS
+--------------------
+- yum install git gcc make libc-devel binutils watcom-wrc watcom-wlink-hll
 
-#include "disclaimer.h"
+COMPILE INSTRUCTIONS
+--------------------
+This version of this sample was modified to compile on ArcaOS with GCC 9 compiler. 
+
+1) Remember to have correct header files your path. For GCC the correct ones are the included on the "libc-devel", not the ones from the OS/2 Toolkit. Check your config.sys for "SET INCLUDE=C:\usr\include"
+
+2) Since it uses the Watcom Resource Compiler (open source) instead of the classic rc.exe, and the the Watcom Linker, intead of the classic ilink.exe, add to your config.sys...
+ SET EMXOMFLD_LINKER=wl.exe
+ SET EMXOMFLD_TYPE=WLINK
+ SET EMXOMFLD_RC_TYPE=WRC
+ SET EMXOMFLD_RC=wrc.exe
+
+3) Run "make" or "make 2>&1 |tee make.out" to get the log file.
 
 
-History revision:
+TOOLS USED
+----------
+- ArcaOS	- Verion 5.0.7
+- wrc 		- Version 2.0beta1
+- gcc		- gcc (GCC) 9.2.0 20190812 (OS/2 RPM build 9.2.0-5.oc00)
+- make 		- Version 3.81 k2 (2017-11-10)
+
+TROUBLESHOOT
+------------
+The compile produce will run by just executing make on the directory, but a compile.cmd file is includes to store the log in a file. If you want to save the log file you can run it as "nmake 2>&1 |tee make.out". The log will be saved into the "make.out" file.
+ 
+
+HISTORY:
 -----------------
+- 1.1 - 2023-06-29
+Compiled with gcc 9 under ArcaOS 5.0.7
 
-v1.0 First version
+- 1.0-r4 - 2021-02-14
+Drag & drop support (new argument: directory or file name)
 
-[09/21/1997] tels@pobox.com
+- 1.0-r3 - 2021-02-10
+Restored OS/2-compatibility. But still broken, because the same
+modified file(name) can be processed twice. Modified universal,
+renamed MAKEFILE with lxLite for NMAKE, OS/2 icon added, a new
+clear warning if directory is empty, formatted output, improved
+error messages, exception handling, no embedded debug code, the
+last file shouldn't be displayed more than once, int's replaced
+by portable size_t's, unused lines and/or C++ comments removed,
+processing modified, and recompiled with IBM VAC++ v3.08.
+
+- 1.0-r2 - 2021-02-10
+Still broken, though: processing of same file name twice
+
+- 1.0 - 1997-09-21 First version
+By Tels - tels@pobox.com
 
 
-v1.0-r3
+LICENSE
+-------
+The 3-Clause BSD License.
 
-[02/10/2021] Restored OS/2-compatibility. But still broken, because the same
-             modified file(name) can be processed twice. Modified universal,
-             renamed MAKEFILE with lxLite for NMAKE, OS/2 icon added, a new
-             clear warning if directory is empty, formatted output, improved
-             error messages, exception handling, no embedded debug code, the
-             last file shouldn't be displayed more than once, int's replaced
-             by portable size_t's, unused lines and/or C++ comments removed,
-             processing modified, and recompiled with IBM VAC++ v3.08.
+AUTHORS
+-------
+- Martin Iturbide (2023)
+- A Doff. (2021)
+- Tels
